@@ -40,7 +40,6 @@ public class Home extends javax.swing.JFrame {
         ValorCentavos = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         UnidadeMedida = new javax.swing.JTextField();
-        GerarPlaca = new javax.swing.JButton();
         FonteNomeProduto = new javax.swing.JComboBox<>(nomeFontes);
         jLabel1 = new javax.swing.JLabel();
         FonteDescricaoProduto = new javax.swing.JComboBox<>(nomeFontes);
@@ -104,6 +103,11 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.add(BaixarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, 30));
 
         NomeProduto.setText("CEBOLA");
+        NomeProduto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NomeProdutoKeyReleased(evt);
+            }
+        });
         MenuEdicaoPlaca.add(NomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 220, 20));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -117,6 +121,11 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 220, 30));
 
         DescricaoProduto.setText("BRANCA");
+        DescricaoProduto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                DescricaoProdutoKeyReleased(evt);
+            }
+        });
         MenuEdicaoPlaca.add(DescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 220, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -125,6 +134,11 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 220, 30));
 
         ValorReais.setText("3");
+        ValorReais.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ValorReaisKeyReleased(evt);
+            }
+        });
         MenuEdicaoPlaca.add(ValorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 220, 20));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -133,6 +147,11 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 220, 30));
 
         ValorCentavos.setText("89");
+        ValorCentavos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ValorCentavosKeyReleased(evt);
+            }
+        });
         MenuEdicaoPlaca.add(ValorCentavos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 220, 20));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -141,16 +160,12 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 220, 30));
 
         UnidadeMedida.setText("KG");
-        MenuEdicaoPlaca.add(UnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 220, 20));
-
-        GerarPlaca.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        GerarPlaca.setText("Gerar Placa");
-        GerarPlaca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GerarPlacaActionPerformed(evt);
+        UnidadeMedida.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                UnidadeMedidaKeyReleased(evt);
             }
         });
-        MenuEdicaoPlaca.add(GerarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 120, 30));
+        MenuEdicaoPlaca.add(UnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 220, 20));
 
         FonteNomeProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,6 +212,11 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 210, 30));
 
         CifraoPreco.setText("R$");
+        CifraoPreco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CifraoPrecoKeyReleased(evt);
+            }
+        });
         MenuEdicaoPlaca.add(CifraoPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 220, -1));
 
         FonteCifraoPreco.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +232,11 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 220, 30));
 
         VirgulaPreco.setText(",");
+        VirgulaPreco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                VirgulaPrecoKeyReleased(evt);
+            }
+        });
         MenuEdicaoPlaca.add(VirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 220, -1));
 
         FonteVirgulaPreco.addActionListener(new java.awt.event.ActionListener() {
@@ -331,25 +356,6 @@ public class Home extends javax.swing.JFrame {
         PainelParaPNG.salvarComoPNG(PlacaKg);
     }//GEN-LAST:event_BaixarPlacaActionPerformed
     
-    // Configura o botao para edita o texto da placa
-    private void GerarPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerarPlacaActionPerformed
-    //1   
-    String NomeProdutoText = NomeProduto.getText();
-    Produto.setText( NomeProdutoText);
-    //2
-    String DescricaoProdutoText = DescricaoProduto.getText();
-    DescricaoDoProduto.setText( DescricaoProdutoText);
-    //3
-    String ValorReaisText = ValorReais.getText();
-    Reais.setText( ValorReaisText);
-    //4
-    String ValorCentavosText = ValorCentavos.getText();
-    Centavos.setText( ValorCentavosText);
-    //5
-    String UnidadeMedidaText = UnidadeMedida.getText();
-    KG.setText( UnidadeMedidaText);
-    }//GEN-LAST:event_GerarPlacaActionPerformed
-
     // Captura a fonte selecionada e seta na placa
     private void FonteNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteNomeProdutoActionPerformed
         try {
@@ -442,6 +448,43 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_FonteVirgulaPrecoActionPerformed
 
+    // Captura o texto digitado e seta na placa
+    private void NomeProdutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NomeProdutoKeyReleased
+        String NomeProdutoText = NomeProduto.getText();
+        Produto.setText( NomeProdutoText);
+    }//GEN-LAST:event_NomeProdutoKeyReleased
+
+    private void DescricaoProdutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DescricaoProdutoKeyReleased
+        String DescricaoProdutoText = DescricaoProduto.getText();
+        DescricaoDoProduto.setText( DescricaoProdutoText);
+    }//GEN-LAST:event_DescricaoProdutoKeyReleased
+
+    private void ValorReaisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorReaisKeyReleased
+        String ValorReaisText = ValorReais.getText();
+        Reais.setText( ValorReaisText);
+    }//GEN-LAST:event_ValorReaisKeyReleased
+
+    private void ValorCentavosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorCentavosKeyReleased
+        String ValorCentavosText = ValorCentavos.getText();
+        Centavos.setText( ValorCentavosText);
+    }//GEN-LAST:event_ValorCentavosKeyReleased
+
+    private void UnidadeMedidaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UnidadeMedidaKeyReleased
+        String UnidadeMedidaText = UnidadeMedida.getText();
+        KG.setText( UnidadeMedidaText);
+    }//GEN-LAST:event_UnidadeMedidaKeyReleased
+
+    private void VirgulaPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_VirgulaPrecoKeyReleased
+        String VirgulaPrecoText = VirgulaPreco.getText();
+        Virgula.setText( VirgulaPrecoText);
+    }//GEN-LAST:event_VirgulaPrecoKeyReleased
+
+    private void CifraoPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CifraoPrecoKeyReleased
+        String CifraoPrecoText = CifraoPreco.getText();
+        Cifrao.setText( CifraoPrecoText);
+    }//GEN-LAST:event_CifraoPrecoKeyReleased
+
+   
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -468,7 +511,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FonteValorReais;
     private javax.swing.JComboBox<String> FonteVirgulaPreco;
     private javax.swing.JPanel FundoOferta;
-    private javax.swing.JButton GerarPlaca;
     private javax.swing.JLabel KG;
     private GDP.PanelRound MenuEdicaoPlaca;
     private javax.swing.JTextField NomeProduto;
