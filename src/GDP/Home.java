@@ -1,5 +1,6 @@
 package GDP;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import org.apache.commons.io.FilenameUtils;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
 public class Home extends javax.swing.JFrame {
@@ -52,6 +54,22 @@ public class Home extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         VirgulaPreco = new javax.swing.JTextField();
         FonteVirgulaPreco = new javax.swing.JComboBox<>(nomeFontes);
+        jLabel9 = new javax.swing.JLabel();
+        TamanhoCifraoPreco = new javax.swing.JTextField();
+        TamanhoNomeProduto = new javax.swing.JTextField();
+        TamanhoDescricaoProduto = new javax.swing.JTextField();
+        TamanhoValorReais = new javax.swing.JTextField();
+        TamanhoValorCentavos = new javax.swing.JTextField();
+        TamanhoUnidadeMedida = new javax.swing.JTextField();
+        TamanhoVirgulaPreco = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        CorCifraoPreco = new javax.swing.JPanel();
+        CorNomeProduto = new javax.swing.JPanel();
+        CorDescricaoProduto = new javax.swing.JPanel();
+        CorValorReais = new javax.swing.JPanel();
+        CorValorCentavos = new javax.swing.JPanel();
+        CorUnidadeMedida = new javax.swing.JPanel();
+        CorVirgulaPreco = new javax.swing.JPanel();
         PlacaKg = new javax.swing.JPanel();
         FundoOferta = new javax.swing.JPanel();
         Oferta = new javax.swing.JLabel();
@@ -100,7 +118,7 @@ public class Home extends javax.swing.JFrame {
                 BaixarPlacaActionPerformed(evt);
             }
         });
-        MenuEdicaoPlaca.add(BaixarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, 30));
+        MenuEdicaoPlaca.add(BaixarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, -1, 30));
 
         NomeProduto.setText("CEBOLA");
         NomeProduto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -167,6 +185,7 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(UnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 220, 20));
 
+        FonteNomeProduto.setPreferredSize(new java.awt.Dimension(45, 20));
         FonteNomeProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FonteNomeProdutoActionPerformed(evt);
@@ -179,6 +198,7 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setText("Fonte:");
         MenuEdicaoPlaca.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 50, 30));
 
+        FonteDescricaoProduto.setPreferredSize(new java.awt.Dimension(47, 20));
         FonteDescricaoProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FonteDescricaoProdutoActionPerformed(evt);
@@ -186,6 +206,7 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(FonteDescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 120, -1));
 
+        FonteValorReais.setPreferredSize(new java.awt.Dimension(12, 20));
         FonteValorReais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FonteValorReaisActionPerformed(evt);
@@ -193,6 +214,7 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(FonteValorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 120, -1));
 
+        FonteValorCentavos.setPreferredSize(new java.awt.Dimension(18, 20));
         FonteValorCentavos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FonteValorCentavosActionPerformed(evt);
@@ -200,6 +222,7 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(FonteValorCentavos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 120, -1));
 
+        FonteUnidadeMedida.setPreferredSize(new java.awt.Dimension(19, 20));
         FonteUnidadeMedida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FonteUnidadeMedidaActionPerformed(evt);
@@ -219,6 +242,7 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(CifraoPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 220, -1));
 
+        FonteCifraoPreco.setPreferredSize(new java.awt.Dimension(19, 20));
         FonteCifraoPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FonteCifraoPrecoActionPerformed(evt);
@@ -239,6 +263,7 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(VirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 220, -1));
 
+        FonteVirgulaPreco.setPreferredSize(new java.awt.Dimension(10, 20));
         FonteVirgulaPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FonteVirgulaPrecoActionPerformed(evt);
@@ -246,7 +271,142 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(FonteVirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 120, -1));
 
-        kGradientPanel1.add(MenuEdicaoPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, 370, 510));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setText("Tamanho:");
+        jLabel9.setToolTipText("");
+        MenuEdicaoPlaca.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 70, 20));
+
+        TamanhoCifraoPreco.setText("48");
+        TamanhoCifraoPreco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoCifraoPrecoKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoCifraoPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 60, -1));
+
+        TamanhoNomeProduto.setText("105");
+        TamanhoNomeProduto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoNomeProdutoKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoNomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 60, -1));
+
+        TamanhoDescricaoProduto.setText("70");
+        TamanhoDescricaoProduto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoDescricaoProdutoKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoDescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 60, -1));
+
+        TamanhoValorReais.setText("220");
+        TamanhoValorReais.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoValorReaisKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoValorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 60, -1));
+
+        TamanhoValorCentavos.setText("70");
+        TamanhoValorCentavos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoValorCentavosKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoValorCentavos, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 60, -1));
+
+        TamanhoUnidadeMedida.setText("52");
+        TamanhoUnidadeMedida.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoUnidadeMedidaKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoUnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 60, -1));
+
+        TamanhoVirgulaPreco.setText("170");
+        TamanhoVirgulaPreco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoVirgulaPrecoKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoVirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 60, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel10.setText("Cor:");
+        MenuEdicaoPlaca.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 70, 20));
+
+        CorCifraoPreco.setBackground(new java.awt.Color(0, 0, 0));
+        CorCifraoPreco.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorCifraoPreco.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorCifraoPreco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorCifraoPrecoMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorCifraoPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 20, -1));
+
+        CorNomeProduto.setBackground(new java.awt.Color(0, 0, 0));
+        CorNomeProduto.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorNomeProduto.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorNomeProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorNomeProdutoMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorNomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 20, -1));
+
+        CorDescricaoProduto.setBackground(new java.awt.Color(0, 0, 0));
+        CorDescricaoProduto.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorDescricaoProduto.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorDescricaoProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorDescricaoProdutoMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorDescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 20, -1));
+
+        CorValorReais.setBackground(new java.awt.Color(204, 0, 0));
+        CorValorReais.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorValorReais.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorValorReais.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorValorReaisMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorValorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 20, -1));
+
+        CorValorCentavos.setBackground(new java.awt.Color(204, 0, 0));
+        CorValorCentavos.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorValorCentavos.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorValorCentavos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorValorCentavosMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorValorCentavos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 20, -1));
+
+        CorUnidadeMedida.setBackground(new java.awt.Color(0, 0, 0));
+        CorUnidadeMedida.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorUnidadeMedida.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorUnidadeMedida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorUnidadeMedidaMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorUnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 20, -1));
+
+        CorVirgulaPreco.setBackground(new java.awt.Color(204, 0, 0));
+        CorVirgulaPreco.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorVirgulaPreco.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorVirgulaPreco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorVirgulaPrecoMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorVirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 20, -1));
+
+        kGradientPanel1.add(MenuEdicaoPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 500, 510));
 
         PlacaKg.setBackground(new java.awt.Color(255, 255, 255));
         PlacaKg.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5)));
@@ -311,7 +471,7 @@ public class Home extends javax.swing.JFrame {
         Reais.setToolTipText("");
         PlacaKg.add(Reais, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 150, 230));
 
-        kGradientPanel1.add(PlacaKg, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 380, 510));
+        kGradientPanel1.add(PlacaKg, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 380, 510));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 640));
 
@@ -484,6 +644,120 @@ public class Home extends javax.swing.JFrame {
         Cifrao.setText( CifraoPrecoText);
     }//GEN-LAST:event_CifraoPrecoKeyReleased
 
+    // Configura o tamanho da fonte
+    private void TamanhoNomeProdutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoNomeProdutoKeyReleased
+        String text = TamanhoNomeProduto.getText();
+        int size = Integer.parseInt(text);
+        Font font = Produto.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Produto.setFont(newFont);
+    }//GEN-LAST:event_TamanhoNomeProdutoKeyReleased
+
+    private void TamanhoDescricaoProdutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoDescricaoProdutoKeyReleased
+        String text = TamanhoDescricaoProduto.getText();
+        int size = Integer.parseInt(text);
+        Font font = DescricaoDoProduto.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        DescricaoDoProduto.setFont(newFont);
+    }//GEN-LAST:event_TamanhoDescricaoProdutoKeyReleased
+
+    private void TamanhoValorReaisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoValorReaisKeyReleased
+        String text = TamanhoValorReais.getText();
+        int size = Integer.parseInt(text);
+        Font font = Reais.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Reais.setFont(newFont);
+    }//GEN-LAST:event_TamanhoValorReaisKeyReleased
+
+    private void TamanhoValorCentavosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoValorCentavosKeyReleased
+        String text = TamanhoValorCentavos.getText();
+        int size = Integer.parseInt(text);
+        Font font = Centavos.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Centavos.setFont(newFont);
+    }//GEN-LAST:event_TamanhoValorCentavosKeyReleased
+
+    private void TamanhoUnidadeMedidaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoUnidadeMedidaKeyReleased
+        String text = TamanhoUnidadeMedida.getText();
+        int size = Integer.parseInt(text);
+        Font font = KG.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        KG.setFont(newFont);
+    }//GEN-LAST:event_TamanhoUnidadeMedidaKeyReleased
+
+    private void TamanhoVirgulaPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoVirgulaPrecoKeyReleased
+        String text = TamanhoVirgulaPreco.getText();
+        int size = Integer.parseInt(text);
+        Font font = Virgula.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Virgula.setFont(newFont);
+    }//GEN-LAST:event_TamanhoVirgulaPrecoKeyReleased
+
+    private void TamanhoCifraoPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoCifraoPrecoKeyReleased
+        String text = TamanhoCifraoPreco.getText();
+        int size = Integer.parseInt(text);
+        Font font = Cifrao.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Cifrao.setFont(newFont);
+    }//GEN-LAST:event_TamanhoCifraoPrecoKeyReleased
+
+    // Configura a cor da fonte
+    private void CorNomeProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorNomeProdutoMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorNomeProduto.getBackground());
+        if (selectedColor != null) {
+                    CorNomeProduto.setBackground(selectedColor);
+                    Produto.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorNomeProdutoMouseClicked
+
+    private void CorDescricaoProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorDescricaoProdutoMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorDescricaoProduto.getBackground());
+        if (selectedColor != null) {
+                    CorDescricaoProduto.setBackground(selectedColor);
+                    DescricaoDoProduto.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorDescricaoProdutoMouseClicked
+
+    private void CorValorReaisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorValorReaisMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorValorReais.getBackground());
+        if (selectedColor != null) {
+                    CorValorReais.setBackground(selectedColor);
+                    Reais.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorValorReaisMouseClicked
+
+    private void CorValorCentavosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorValorCentavosMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorValorCentavos.getBackground());
+        if (selectedColor != null) {
+                    CorValorCentavos.setBackground(selectedColor);
+                    Centavos.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorValorCentavosMouseClicked
+
+    private void CorUnidadeMedidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorUnidadeMedidaMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorUnidadeMedida.getBackground());
+        if (selectedColor != null) {
+                    CorUnidadeMedida.setBackground(selectedColor);
+                    KG.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorUnidadeMedidaMouseClicked
+
+    private void CorVirgulaPrecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorVirgulaPrecoMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorVirgulaPreco.getBackground());
+        if (selectedColor != null) {
+                    CorVirgulaPreco.setBackground(selectedColor);
+                    Virgula.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorVirgulaPrecoMouseClicked
+
+    private void CorCifraoPrecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorCifraoPrecoMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorCifraoPreco.getBackground());
+        if (selectedColor != null) {
+                    CorCifraoPreco.setBackground(selectedColor);
+                    Cifrao.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorCifraoPrecoMouseClicked
+
    
     public static void main(String args[]) {
 
@@ -499,6 +773,13 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel Centavos;
     private javax.swing.JLabel Cifrao;
     private javax.swing.JTextField CifraoPreco;
+    private javax.swing.JPanel CorCifraoPreco;
+    private javax.swing.JPanel CorDescricaoProduto;
+    private javax.swing.JPanel CorNomeProduto;
+    private javax.swing.JPanel CorUnidadeMedida;
+    private javax.swing.JPanel CorValorCentavos;
+    private javax.swing.JPanel CorValorReais;
+    private javax.swing.JPanel CorVirgulaPreco;
     private javax.swing.JLabel DescricaoDoProduto;
     private javax.swing.JTextField DescricaoProduto;
     private javax.swing.JSeparator DivisorCentavos;
@@ -518,12 +799,20 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel PlacaKg;
     private javax.swing.JLabel Produto;
     private javax.swing.JLabel Reais;
+    private javax.swing.JTextField TamanhoCifraoPreco;
+    private javax.swing.JTextField TamanhoDescricaoProduto;
+    private javax.swing.JTextField TamanhoNomeProduto;
+    private javax.swing.JTextField TamanhoUnidadeMedida;
+    private javax.swing.JTextField TamanhoValorCentavos;
+    private javax.swing.JTextField TamanhoValorReais;
+    private javax.swing.JTextField TamanhoVirgulaPreco;
     private javax.swing.JTextField UnidadeMedida;
     private javax.swing.JTextField ValorCentavos;
     private javax.swing.JTextField ValorReais;
     private javax.swing.JLabel Virgula;
     private javax.swing.JTextField VirgulaPreco;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -531,6 +820,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }
