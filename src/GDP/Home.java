@@ -8,13 +8,20 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFileChooser;
 import java.io.IOException;
 import org.apache.commons.io.FilenameUtils;
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+import javax.swing.JOptionPane;
 
 public class Home extends javax.swing.JFrame {
 
     public Home() {
         initComponents();
     }
-
+    
+    // Captura as fontes da pasta local do windows
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    String[] nomeFontes = ge.getAvailableFontFamilyNames();
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -22,8 +29,6 @@ public class Home extends javax.swing.JFrame {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         Fechar = new javax.swing.JLabel();
         MenuEdicaoPlaca = new GDP.PanelRound();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         BaixarPlaca = new javax.swing.JButton();
         NomeProduto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -36,6 +41,18 @@ public class Home extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         UnidadeMedida = new javax.swing.JTextField();
         GerarPlaca = new javax.swing.JButton();
+        FonteNomeProduto = new javax.swing.JComboBox<>(nomeFontes);
+        jLabel1 = new javax.swing.JLabel();
+        FonteDescricaoProduto = new javax.swing.JComboBox<>(nomeFontes);
+        FonteValorReais = new javax.swing.JComboBox<>(nomeFontes);
+        FonteValorCentavos = new javax.swing.JComboBox<>(nomeFontes);
+        FonteUnidadeMedida = new javax.swing.JComboBox<>(nomeFontes);
+        jLabel2 = new javax.swing.JLabel();
+        CifraoPreco = new javax.swing.JTextField();
+        FonteCifraoPreco = new javax.swing.JComboBox<>(nomeFontes);
+        jLabel8 = new javax.swing.JLabel();
+        VirgulaPreco = new javax.swing.JTextField();
+        FonteVirgulaPreco = new javax.swing.JComboBox<>(nomeFontes);
         PlacaKg = new javax.swing.JPanel();
         FundoOferta = new javax.swing.JPanel();
         Oferta = new javax.swing.JLabel();
@@ -77,15 +94,6 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.setRoundTopRight(50);
         MenuEdicaoPlaca.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Selecione o modelo da Placa");
-        MenuEdicaoPlaca.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 350, 57));
-
-        jComboBox1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Placa KG" }));
-        MenuEdicaoPlaca.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 100, 30));
-
         BaixarPlaca.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BaixarPlaca.setText("Baixar Placa");
         BaixarPlaca.addActionListener(new java.awt.event.ActionListener() {
@@ -96,44 +104,44 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.add(BaixarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, 30));
 
         NomeProduto.setText("CEBOLA");
-        MenuEdicaoPlaca.add(NomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 220, 40));
+        MenuEdicaoPlaca.add(NomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 220, 20));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Nome do produto:");
-        MenuEdicaoPlaca.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 160, 30));
+        MenuEdicaoPlaca.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Descrição do produto:");
-        MenuEdicaoPlaca.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 220, 30));
+        MenuEdicaoPlaca.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 220, 30));
 
         DescricaoProduto.setText("BRANCA");
-        MenuEdicaoPlaca.add(DescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 220, 40));
+        MenuEdicaoPlaca.add(DescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 220, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Valor em reais:");
-        MenuEdicaoPlaca.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 220, 30));
+        MenuEdicaoPlaca.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 220, 30));
 
         ValorReais.setText("3");
-        MenuEdicaoPlaca.add(ValorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 220, 40));
+        MenuEdicaoPlaca.add(ValorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 220, 20));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Valor em centavos:");
-        MenuEdicaoPlaca.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 220, 30));
+        MenuEdicaoPlaca.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 220, 30));
 
         ValorCentavos.setText("89");
-        MenuEdicaoPlaca.add(ValorCentavos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 220, 40));
+        MenuEdicaoPlaca.add(ValorCentavos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 220, 20));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Unidade de medida:");
-        MenuEdicaoPlaca.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 220, 20));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("Cifrão:");
+        MenuEdicaoPlaca.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 220, 30));
 
         UnidadeMedida.setText("KG");
-        MenuEdicaoPlaca.add(UnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 220, 30));
+        MenuEdicaoPlaca.add(UnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 220, 20));
 
         GerarPlaca.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         GerarPlaca.setText("Gerar Placa");
@@ -143,6 +151,75 @@ public class Home extends javax.swing.JFrame {
             }
         });
         MenuEdicaoPlaca.add(GerarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 120, 30));
+
+        FonteNomeProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteNomeProdutoActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteNomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 120, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("Fonte:");
+        MenuEdicaoPlaca.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 50, 30));
+
+        FonteDescricaoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteDescricaoProdutoActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteDescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 120, -1));
+
+        FonteValorReais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteValorReaisActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteValorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 120, -1));
+
+        FonteValorCentavos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteValorCentavosActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteValorCentavos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 120, -1));
+
+        FonteUnidadeMedida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteUnidadeMedidaActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteUnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 120, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Virgula:");
+        MenuEdicaoPlaca.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 210, 30));
+
+        CifraoPreco.setText("R$");
+        MenuEdicaoPlaca.add(CifraoPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 220, -1));
+
+        FonteCifraoPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteCifraoPrecoActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteCifraoPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 120, -1));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel8.setText("Unidade de medida:");
+        MenuEdicaoPlaca.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 220, 30));
+
+        VirgulaPreco.setText(",");
+        MenuEdicaoPlaca.add(VirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 220, -1));
+
+        FonteVirgulaPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteVirgulaPrecoActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteVirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 120, -1));
 
         kGradientPanel1.add(MenuEdicaoPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, 370, 510));
 
@@ -182,13 +259,13 @@ public class Home extends javax.swing.JFrame {
         KG.setFont(new java.awt.Font("Impact", 0, 52)); // NOI18N
         KG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         KG.setText("KG");
-        PlacaKg.add(KG, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 110, 100));
+        PlacaKg.add(KG, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 110, 100));
 
         Virgula.setFont(new java.awt.Font("Tahoma", 1, 170)); // NOI18N
         Virgula.setForeground(new java.awt.Color(204, 0, 0));
         Virgula.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Virgula.setText(",");
-        PlacaKg.add(Virgula, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 90, 180));
+        PlacaKg.add(Virgula, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 90, 180));
 
         DivisorCentavos.setBackground(new java.awt.Color(255, 0, 51));
         DivisorCentavos.setForeground(new java.awt.Color(204, 0, 0));
@@ -216,7 +293,7 @@ public class Home extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+
     // Convert o painel em png e salva
     public static class PainelParaPNG {
         
@@ -243,8 +320,7 @@ public class Home extends javax.swing.JFrame {
     }
     }
 }
-    
-    
+      
     // Configura o JLabel X para fechar a janela
     private void FecharMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FecharMousePressed
     System.exit(0);
@@ -274,6 +350,98 @@ public class Home extends javax.swing.JFrame {
     KG.setText( UnidadeMedidaText);
     }//GEN-LAST:event_GerarPlacaActionPerformed
 
+    // Captura a fonte selecionada e seta na placa
+    private void FonteNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteNomeProdutoActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteNomeProduto.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,105);
+
+            
+            Produto.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteNomeProdutoActionPerformed
+
+    private void FonteDescricaoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteDescricaoProdutoActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteDescricaoProduto.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,70);
+
+            
+            DescricaoDoProduto.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteDescricaoProdutoActionPerformed
+
+    private void FonteValorReaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteValorReaisActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteValorReais.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,220);
+
+            
+            Reais.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteValorReaisActionPerformed
+
+    private void FonteValorCentavosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteValorCentavosActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteValorCentavos.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,70);
+
+            
+            Centavos.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteValorCentavosActionPerformed
+
+    private void FonteUnidadeMedidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteUnidadeMedidaActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteUnidadeMedida.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,52);
+
+            
+            KG.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteUnidadeMedidaActionPerformed
+
+    private void FonteCifraoPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteCifraoPrecoActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteCifraoPreco.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,48);
+
+            
+            Cifrao.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteCifraoPrecoActionPerformed
+
+    private void FonteVirgulaPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteVirgulaPrecoActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteVirgulaPreco.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,170);
+
+            
+            Virgula.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteVirgulaPrecoActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -287,10 +455,18 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton BaixarPlaca;
     private javax.swing.JLabel Centavos;
     private javax.swing.JLabel Cifrao;
+    private javax.swing.JTextField CifraoPreco;
     private javax.swing.JLabel DescricaoDoProduto;
     private javax.swing.JTextField DescricaoProduto;
     private javax.swing.JSeparator DivisorCentavos;
     private javax.swing.JLabel Fechar;
+    private javax.swing.JComboBox<String> FonteCifraoPreco;
+    private javax.swing.JComboBox<String> FonteDescricaoProduto;
+    private javax.swing.JComboBox<String> FonteNomeProduto;
+    private javax.swing.JComboBox<String> FonteUnidadeMedida;
+    private javax.swing.JComboBox<String> FonteValorCentavos;
+    private javax.swing.JComboBox<String> FonteValorReais;
+    private javax.swing.JComboBox<String> FonteVirgulaPreco;
     private javax.swing.JPanel FundoOferta;
     private javax.swing.JButton GerarPlaca;
     private javax.swing.JLabel KG;
@@ -304,13 +480,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField ValorCentavos;
     private javax.swing.JTextField ValorReais;
     private javax.swing.JLabel Virgula;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField VirgulaPreco;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }
