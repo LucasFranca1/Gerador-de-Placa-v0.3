@@ -10,6 +10,7 @@ import javax.swing.JFileChooser;
 import java.io.IOException;
 import org.apache.commons.io.FilenameUtils;
 import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
@@ -70,6 +71,11 @@ public class Home extends javax.swing.JFrame {
         CorValorCentavos = new javax.swing.JPanel();
         CorUnidadeMedida = new javax.swing.JPanel();
         CorVirgulaPreco = new javax.swing.JPanel();
+        widthUser = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        heightUser = new javax.swing.JTextField();
+        Resolucoes = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
         PlacaKg = new javax.swing.JPanel();
         FundoOferta = new javax.swing.JPanel();
         Oferta = new javax.swing.JLabel();
@@ -118,7 +124,7 @@ public class Home extends javax.swing.JFrame {
                 BaixarPlacaActionPerformed(evt);
             }
         });
-        MenuEdicaoPlaca.add(BaixarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, -1, 30));
+        MenuEdicaoPlaca.add(BaixarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, 30));
 
         NomeProduto.setText("CEBOLA");
         NomeProduto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -406,6 +412,47 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(CorVirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 20, -1));
 
+        widthUser.setText("3508 ");
+        widthUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                widthUserKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(widthUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 90, 30));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("X");
+        MenuEdicaoPlaca.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 20, 30));
+
+        heightUser.setText("4961");
+        heightUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                heightUserKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(heightUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 90, 30));
+
+        Resolucoes.addItem("A0 841 × 1189 = 9933 x 14043 pixels");
+        Resolucoes.addItem("A1 594 × 841  = 7016 x 9933 pixels");
+        Resolucoes.addItem("A2 420 × 594  = 4961 x 7016 pixels");
+        Resolucoes.addItem("A3 297 × 420  = 3508 x 4961 pixels");
+        Resolucoes.addItem("A4 210 × 297  = 2480 x 3508 pixels");
+        Resolucoes.addItem("A5 148 × 210  = 1748 x 2480 pixels");
+        Resolucoes.addItem("A6 105 × 148  = 1240 x 1748 pixels");
+        Resolucoes.addItem("A7 74 × 105  = 874 x 1240 pixels");
+        Resolucoes.addItem("A8 52 × 74  = 614 x 874 pixels");
+        Resolucoes.addItem("A9 37 × 52  = 437 x 614 pixels");
+        Resolucoes.addItem("A10 26 × 37 = 307 x 437 pixels");
+        Resolucoes.setSelectedIndex(3);
+        MenuEdicaoPlaca.add(Resolucoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 240, 30));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Escolha uma resolução ou personalize uma !!!");
+        MenuEdicaoPlaca.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 490, 40));
+
         kGradientPanel1.add(MenuEdicaoPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 500, 510));
 
         PlacaKg.setBackground(new java.awt.Color(255, 255, 255));
@@ -482,7 +529,21 @@ public class Home extends javax.swing.JFrame {
     // Convert o painel em png e salva
     public static class PainelParaPNG {
         
+    private static int width = 3508;
+    private static int height = 4961;
+    
+    public static void setWidth(int newWidth) {
+        width = newWidth;
+    }
+    
+    public static void setHeight(int newHeight) {
+        height = newHeight;
+    }
+    
     public static void salvarComoPNG(JPanel PlacaKg) {
+      
+     
+    // Janela para salvar arquivo
     JFileChooser fileChooser = new JFileChooser();
     fileChooser.setDialogTitle("Salvar como...");
     fileChooser.setFileFilter(new FileNameExtensionFilter("PNG images (*.png)", "png"));
@@ -496,9 +557,12 @@ public class Home extends javax.swing.JFrame {
         }
         try {
             // Onde acontece a conversao em si
-            BufferedImage imagem = new BufferedImage(PlacaKg.getWidth(), PlacaKg.getHeight(), BufferedImage.TYPE_INT_RGB);
-            PlacaKg.paint(imagem.getGraphics());
-            ImageIO.write(imagem, "png", new File(filePath));
+            BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+            Graphics2D g2d = image.createGraphics();
+            g2d.scale((double) width / PlacaKg.getWidth(), (double) height / PlacaKg.getHeight());
+            PlacaKg.printAll(g2d);
+            g2d.dispose();
+            ImageIO.write(image, "png", new File(filePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -758,6 +822,19 @@ public class Home extends javax.swing.JFrame {
                 }
     }//GEN-LAST:event_CorCifraoPrecoMouseClicked
 
+    // configura o campo de resoluçao personalizado
+    private void widthUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_widthUserKeyReleased
+        String valor = widthUser.getText();
+        int newWidth = Integer.parseInt(valor);
+        PainelParaPNG.setWidth(newWidth);
+    }//GEN-LAST:event_widthUserKeyReleased
+
+    private void heightUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_heightUserKeyReleased
+        String valor = heightUser.getText();
+        int newHeight = Integer.parseInt(valor);
+        PainelParaPNG.setHeight(newHeight);
+    }//GEN-LAST:event_heightUserKeyReleased
+
    
     public static void main(String args[]) {
 
@@ -799,6 +876,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel PlacaKg;
     private javax.swing.JLabel Produto;
     private javax.swing.JLabel Reais;
+    private javax.swing.JComboBox<String> Resolucoes;
     private javax.swing.JTextField TamanhoCifraoPreco;
     private javax.swing.JTextField TamanhoDescricaoProduto;
     private javax.swing.JTextField TamanhoNomeProduto;
@@ -811,8 +889,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField ValorReais;
     private javax.swing.JLabel Virgula;
     private javax.swing.JTextField VirgulaPreco;
+    private javax.swing.JTextField heightUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -822,5 +903,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JTextField widthUser;
     // End of variables declaration//GEN-END:variables
 }
