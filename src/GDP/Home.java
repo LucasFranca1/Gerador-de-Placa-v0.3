@@ -10,8 +10,11 @@ import javax.swing.JFileChooser;
 import java.io.IOException;
 import org.apache.commons.io.FilenameUtils;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
@@ -24,7 +27,7 @@ public class Home extends javax.swing.JFrame {
     // Captura as fontes da pasta local do windows
     GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
     String[] nomeFontes = ge.getAvailableFontFamilyNames();
-    
+     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -32,6 +35,7 @@ public class Home extends javax.swing.JFrame {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         Fechar = new javax.swing.JLabel();
         MenuEdicaoPlaca = new GDP.PanelRound();
+        FonteExternaProduto = new javax.swing.JToggleButton();
         BaixarPlaca = new javax.swing.JButton();
         NomeProduto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -76,6 +80,12 @@ public class Home extends javax.swing.JFrame {
         heightUser = new javax.swing.JTextField();
         Resolucoes = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+        FonteExternaDescricaoProduto = new javax.swing.JToggleButton();
+        FonteExternaValorReais = new javax.swing.JToggleButton();
+        FonteExternaValorCentavos = new javax.swing.JToggleButton();
+        FonteExternaUnidadeMedida = new javax.swing.JToggleButton();
+        FonteExternaVirgulaPreco = new javax.swing.JToggleButton();
+        FonteExternaCifraoPreco = new javax.swing.JToggleButton();
         PlacaKg = new javax.swing.JPanel();
         FundoOferta = new javax.swing.JPanel();
         Oferta = new javax.swing.JLabel();
@@ -108,7 +118,7 @@ public class Home extends javax.swing.JFrame {
                 FecharMousePressed(evt);
             }
         });
-        kGradientPanel1.add(Fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 0, 60, 60));
+        kGradientPanel1.add(Fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 0, 60, 60));
 
         MenuEdicaoPlaca.setBackground(new java.awt.Color(255, 255, 255));
         MenuEdicaoPlaca.setRoundBottomLeft(50);
@@ -116,6 +126,15 @@ public class Home extends javax.swing.JFrame {
         MenuEdicaoPlaca.setRoundTopLeft(50);
         MenuEdicaoPlaca.setRoundTopRight(50);
         MenuEdicaoPlaca.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        FonteExternaProduto.setText("Fonte Externa");
+        FonteExternaProduto.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaProdutoActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 140, -1));
 
         BaixarPlaca.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BaixarPlaca.setText("Baixar Placa");
@@ -201,8 +220,8 @@ public class Home extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText("Fonte:");
-        MenuEdicaoPlaca.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 50, 30));
+        jLabel1.setText("Fontes do sistema:");
+        MenuEdicaoPlaca.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 120, 30));
 
         FonteDescricaoProduto.setPreferredSize(new java.awt.Dimension(47, 20));
         FonteDescricaoProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -453,7 +472,61 @@ public class Home extends javax.swing.JFrame {
         jLabel12.setText("Escolha uma resolução ou personalize uma !!!");
         MenuEdicaoPlaca.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 490, 40));
 
-        kGradientPanel1.add(MenuEdicaoPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 500, 510));
+        FonteExternaDescricaoProduto.setText("Fonte Externa");
+        FonteExternaDescricaoProduto.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaDescricaoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaDescricaoProdutoActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaDescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 140, -1));
+
+        FonteExternaValorReais.setText("Fonte Externa");
+        FonteExternaValorReais.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaValorReais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaValorReaisActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaValorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 140, -1));
+
+        FonteExternaValorCentavos.setText("Fonte Externa");
+        FonteExternaValorCentavos.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaValorCentavos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaValorCentavosActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaValorCentavos, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 140, -1));
+
+        FonteExternaUnidadeMedida.setText("Fonte Externa");
+        FonteExternaUnidadeMedida.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaUnidadeMedida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaUnidadeMedidaActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaUnidadeMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 140, -1));
+
+        FonteExternaVirgulaPreco.setText("Fonte Externa");
+        FonteExternaVirgulaPreco.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaVirgulaPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaVirgulaPrecoActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaVirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, 140, -1));
+
+        FonteExternaCifraoPreco.setText("Fonte Externa");
+        FonteExternaCifraoPreco.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaCifraoPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaCifraoPrecoActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaCifraoPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 140, -1));
+
+        kGradientPanel1.add(MenuEdicaoPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 680, 510));
 
         PlacaKg.setBackground(new java.awt.Color(255, 255, 255));
         PlacaKg.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5)));
@@ -520,7 +593,7 @@ public class Home extends javax.swing.JFrame {
 
         kGradientPanel1.add(PlacaKg, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 380, 510));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 640));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 640));
 
         pack();
         setLocationRelativeTo(null);
@@ -712,57 +785,64 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoNomeProdutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoNomeProdutoKeyReleased
         String text = TamanhoNomeProduto.getText();
         int size = Integer.parseInt(text);
-        Font font = Produto.getFont();
-        Font newFont = new Font(font.getName(), font.getStyle(), size);
-        Produto.setFont(newFont);
+        if (minhaFonte1 != null){
+            Font newFonte = minhaFonte1.deriveFont((float)size);
+            Produto.setFont(newFonte);
+        }
     }//GEN-LAST:event_TamanhoNomeProdutoKeyReleased
 
     private void TamanhoDescricaoProdutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoDescricaoProdutoKeyReleased
         String text = TamanhoDescricaoProduto.getText();
         int size = Integer.parseInt(text);
-        Font font = DescricaoDoProduto.getFont();
-        Font newFont = new Font(font.getName(), font.getStyle(), size);
-        DescricaoDoProduto.setFont(newFont);
+        if (minhaFonte2 != null){
+            Font newFonte = minhaFonte2.deriveFont((float)size);
+            DescricaoDoProduto.setFont(newFonte);
+        }
     }//GEN-LAST:event_TamanhoDescricaoProdutoKeyReleased
 
     private void TamanhoValorReaisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoValorReaisKeyReleased
         String text = TamanhoValorReais.getText();
         int size = Integer.parseInt(text);
-        Font font = Reais.getFont();
-        Font newFont = new Font(font.getName(), font.getStyle(), size);
-        Reais.setFont(newFont);
+        if (minhaFonte3 != null){
+            Font newFonte = minhaFonte3.deriveFont((float)size);
+            Reais.setFont(newFonte);
+        }
     }//GEN-LAST:event_TamanhoValorReaisKeyReleased
 
     private void TamanhoValorCentavosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoValorCentavosKeyReleased
         String text = TamanhoValorCentavos.getText();
         int size = Integer.parseInt(text);
-        Font font = Centavos.getFont();
-        Font newFont = new Font(font.getName(), font.getStyle(), size);
-        Centavos.setFont(newFont);
+        if (minhaFonte4 != null){
+            Font newFonte = minhaFonte4.deriveFont((float)size);
+            Centavos.setFont(newFonte);
+        }
     }//GEN-LAST:event_TamanhoValorCentavosKeyReleased
 
     private void TamanhoUnidadeMedidaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoUnidadeMedidaKeyReleased
         String text = TamanhoUnidadeMedida.getText();
         int size = Integer.parseInt(text);
-        Font font = KG.getFont();
-        Font newFont = new Font(font.getName(), font.getStyle(), size);
-        KG.setFont(newFont);
+        if (minhaFonte5 != null){
+            Font newFonte = minhaFonte5.deriveFont((float)size);
+            KG.setFont(newFonte);
+        }
     }//GEN-LAST:event_TamanhoUnidadeMedidaKeyReleased
 
     private void TamanhoVirgulaPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoVirgulaPrecoKeyReleased
         String text = TamanhoVirgulaPreco.getText();
         int size = Integer.parseInt(text);
-        Font font = Virgula.getFont();
-        Font newFont = new Font(font.getName(), font.getStyle(), size);
-        Virgula.setFont(newFont);
+        if (minhaFonte6 != null){
+            Font newFonte = minhaFonte6.deriveFont((float)size);
+            Virgula.setFont(newFonte);
+        }
     }//GEN-LAST:event_TamanhoVirgulaPrecoKeyReleased
 
     private void TamanhoCifraoPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoCifraoPrecoKeyReleased
         String text = TamanhoCifraoPreco.getText();
         int size = Integer.parseInt(text);
-        Font font = Cifrao.getFont();
-        Font newFont = new Font(font.getName(), font.getStyle(), size);
-        Cifrao.setFont(newFont);
+        if (minhaFonte7 != null){
+            Font newFonte = minhaFonte7.deriveFont((float)size);
+            Cifrao.setFont(newFonte);
+        }
     }//GEN-LAST:event_TamanhoCifraoPrecoKeyReleased
 
     // Configura a cor da fonte
@@ -835,6 +915,154 @@ public class Home extends javax.swing.JFrame {
         PainelParaPNG.setHeight(newHeight);
     }//GEN-LAST:event_heightUserKeyReleased
 
+    // Fonte Externa
+    private Font minhaFonte1;
+    private void FonteExternaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaProdutoActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte1 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte1 = minhaFonte1.deriveFont(105f);            
+        Produto.setFont(minhaFonte1);
+        }
+    }//GEN-LAST:event_FonteExternaProdutoActionPerformed
+
+    private Font minhaFonte2;
+    private void FonteExternaDescricaoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaDescricaoProdutoActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte2 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte2 = minhaFonte2.deriveFont(70f);            
+        DescricaoDoProduto.setFont(minhaFonte2);
+        }
+    }//GEN-LAST:event_FonteExternaDescricaoProdutoActionPerformed
+
+    private Font minhaFonte3;
+    private void FonteExternaValorReaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaValorReaisActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte3 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte3 = minhaFonte3.deriveFont(220f);            
+        Reais.setFont(minhaFonte3);
+        } 
+    }//GEN-LAST:event_FonteExternaValorReaisActionPerformed
+
+    private Font minhaFonte4;
+    private void FonteExternaValorCentavosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaValorCentavosActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte4 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte4 = minhaFonte4.deriveFont(70f);            
+        Centavos.setFont(minhaFonte4);
+        }
+    }//GEN-LAST:event_FonteExternaValorCentavosActionPerformed
+
+    private Font minhaFonte5;
+    private void FonteExternaUnidadeMedidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaUnidadeMedidaActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte5 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte5 = minhaFonte5.deriveFont(52f);            
+        KG.setFont(minhaFonte5);
+        }
+    }//GEN-LAST:event_FonteExternaUnidadeMedidaActionPerformed
+
+    private Font minhaFonte6;
+    private void FonteExternaVirgulaPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaVirgulaPrecoActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte6 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte6 = minhaFonte6.deriveFont(170f);            
+        Virgula.setFont(minhaFonte6);
+        }
+    }//GEN-LAST:event_FonteExternaVirgulaPrecoActionPerformed
+
+    private Font minhaFonte7;
+    private void FonteExternaCifraoPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaCifraoPrecoActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte7 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte7 = minhaFonte7.deriveFont(48f);            
+        Cifrao.setFont(minhaFonte7);
+        }
+    }//GEN-LAST:event_FonteExternaCifraoPrecoActionPerformed
+
    
     public static void main(String args[]) {
 
@@ -863,6 +1091,13 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel Fechar;
     private javax.swing.JComboBox<String> FonteCifraoPreco;
     private javax.swing.JComboBox<String> FonteDescricaoProduto;
+    private javax.swing.JToggleButton FonteExternaCifraoPreco;
+    private javax.swing.JToggleButton FonteExternaDescricaoProduto;
+    private javax.swing.JToggleButton FonteExternaProduto;
+    private javax.swing.JToggleButton FonteExternaUnidadeMedida;
+    private javax.swing.JToggleButton FonteExternaValorCentavos;
+    private javax.swing.JToggleButton FonteExternaValorReais;
+    private javax.swing.JToggleButton FonteExternaVirgulaPreco;
     private javax.swing.JComboBox<String> FonteNomeProduto;
     private javax.swing.JComboBox<String> FonteUnidadeMedida;
     private javax.swing.JComboBox<String> FonteValorCentavos;
