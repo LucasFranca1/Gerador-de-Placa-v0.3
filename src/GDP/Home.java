@@ -893,6 +893,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoNomeProdutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoNomeProdutoKeyReleased
         String text = TamanhoNomeProduto.getText();
         int size = Integer.parseInt(text);
+        Font font = Produto.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Produto.setFont(newFont);
         if (minhaFonte1 != null){
             Font newFonte = minhaFonte1.deriveFont((float)size);
             Produto.setFont(newFonte);
@@ -902,6 +905,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoDescricaoProdutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoDescricaoProdutoKeyReleased
         String text = TamanhoDescricaoProduto.getText();
         int size = Integer.parseInt(text);
+        Font font = DescricaoDoProduto.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        DescricaoDoProduto.setFont(newFont);
         if (minhaFonte2 != null){
             Font newFonte = minhaFonte2.deriveFont((float)size);
             DescricaoDoProduto.setFont(newFonte);
@@ -911,6 +917,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoValorReaisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoValorReaisKeyReleased
         String text = TamanhoValorReais.getText();
         int size = Integer.parseInt(text);
+        Font font = Reais.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Reais.setFont(newFont);
         if (minhaFonte3 != null){
             Font newFonte = minhaFonte3.deriveFont((float)size);
             Reais.setFont(newFonte);
@@ -920,6 +929,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoValorCentavosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoValorCentavosKeyReleased
         String text = TamanhoValorCentavos.getText();
         int size = Integer.parseInt(text);
+        Font font = Centavos.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Centavos.setFont(newFont);
         if (minhaFonte4 != null){
             Font newFonte = minhaFonte4.deriveFont((float)size);
             Centavos.setFont(newFonte);
@@ -929,6 +941,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoUnidadeMedidaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoUnidadeMedidaKeyReleased
         String text = TamanhoUnidadeMedida.getText();
         int size = Integer.parseInt(text);
+        Font font = KG.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        KG.setFont(newFont);
         if (minhaFonte5 != null){
             Font newFonte = minhaFonte5.deriveFont((float)size);
             KG.setFont(newFonte);
@@ -938,6 +953,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoVirgulaPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoVirgulaPrecoKeyReleased
         String text = TamanhoVirgulaPreco.getText();
         int size = Integer.parseInt(text);
+        Font font = Virgula.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Virgula.setFont(newFont);
         if (minhaFonte6 != null){
             Font newFonte = minhaFonte6.deriveFont((float)size);
             Virgula.setFont(newFonte);
@@ -947,6 +965,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoCifraoPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoCifraoPrecoKeyReleased
         String text = TamanhoCifraoPreco.getText();
         int size = Integer.parseInt(text);
+        Font font = Cifrao.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Cifrao.setFont(newFont);
         if (minhaFonte7 != null){
             Font newFonte = minhaFonte7.deriveFont((float)size);
             Cifrao.setFont(newFonte);
@@ -1193,6 +1214,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoTextoExtraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoTextoExtraKeyReleased
         String text = TamanhoTextoExtra.getText();
         int size = Integer.parseInt(text);
+        Font font = Extra.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Extra.setFont(newFont);
         if (minhaFonte8 != null){
             Font newFonte = minhaFonte8.deriveFont((float)size);
             Extra.setFont(newFonte);
@@ -1250,6 +1274,9 @@ public class Home extends javax.swing.JFrame {
     private void TamanhoTituloKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoTituloKeyReleased
         String text = TamanhoTitulo.getText();
         int size = Integer.parseInt(text);
+        Font font = Oferta.getFont();
+        Font newFont = new Font(font.getName(), font.getStyle(), size);
+        Oferta.setFont(newFont);
         if (minhaFonte9 != null){
             Font newFonte = minhaFonte9.deriveFont((float)size);
             Oferta.setFont(newFonte);
