@@ -79,13 +79,24 @@ public class Home extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         heightUser = new javax.swing.JTextField();
         Resolucoes = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
         FonteExternaDescricaoProduto = new javax.swing.JToggleButton();
         FonteExternaValorReais = new javax.swing.JToggleButton();
         FonteExternaValorCentavos = new javax.swing.JToggleButton();
         FonteExternaUnidadeMedida = new javax.swing.JToggleButton();
         FonteExternaVirgulaPreco = new javax.swing.JToggleButton();
         FonteExternaCifraoPreco = new javax.swing.JToggleButton();
+        TextoExtra = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        FonteTextoExtra = new javax.swing.JComboBox<>(nomeFontes);
+        TamanhoTextoExtra = new javax.swing.JTextField();
+        CorTextoExtra = new javax.swing.JPanel();
+        FonteExternaTextoExtra = new javax.swing.JToggleButton();
+        jLabel15 = new javax.swing.JLabel();
+        Titulo = new javax.swing.JTextField();
+        FonteTitulo = new javax.swing.JComboBox<>(nomeFontes);
+        TamanhoTitulo = new javax.swing.JTextField();
+        CorTitulo = new javax.swing.JPanel();
+        FonteExternaTitulo = new javax.swing.JToggleButton();
         PlacaKg = new javax.swing.JPanel();
         FundoOferta = new javax.swing.JPanel();
         Oferta = new javax.swing.JLabel();
@@ -97,6 +108,7 @@ public class Home extends javax.swing.JFrame {
         DivisorCentavos = new javax.swing.JSeparator();
         Centavos = new javax.swing.JLabel();
         Reais = new javax.swing.JLabel();
+        Extra = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerador de Placa");
@@ -143,7 +155,7 @@ public class Home extends javax.swing.JFrame {
                 BaixarPlacaActionPerformed(evt);
             }
         });
-        MenuEdicaoPlaca.add(BaixarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, 30));
+        MenuEdicaoPlaca.add(BaixarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, -1, 30));
 
         NomeProduto.setText("CEBOLA");
         NomeProduto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -299,7 +311,7 @@ public class Home extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Tamanho:");
         jLabel9.setToolTipText("");
-        MenuEdicaoPlaca.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 70, 20));
+        MenuEdicaoPlaca.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 70, 30));
 
         TamanhoCifraoPreco.setText("48");
         TamanhoCifraoPreco.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -359,7 +371,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Cor:");
-        MenuEdicaoPlaca.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 70, 20));
+        MenuEdicaoPlaca.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 70, 30));
 
         CorCifraoPreco.setBackground(new java.awt.Color(0, 0, 0));
         CorCifraoPreco.setMinimumSize(new java.awt.Dimension(28, 20));
@@ -437,12 +449,12 @@ public class Home extends javax.swing.JFrame {
                 widthUserKeyReleased(evt);
             }
         });
-        MenuEdicaoPlaca.add(widthUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 90, 30));
+        MenuEdicaoPlaca.add(widthUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 40, 30));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("X");
-        MenuEdicaoPlaca.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 20, 30));
+        MenuEdicaoPlaca.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 20, 30));
 
         heightUser.setText("4961");
         heightUser.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -450,7 +462,7 @@ public class Home extends javax.swing.JFrame {
                 heightUserKeyReleased(evt);
             }
         });
-        MenuEdicaoPlaca.add(heightUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 90, 30));
+        MenuEdicaoPlaca.add(heightUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 40, 30));
 
         Resolucoes.addItem("A0 841 × 1189 = 9933 x 14043 pixels");
         Resolucoes.addItem("A1 594 × 841  = 7016 x 9933 pixels");
@@ -464,13 +476,7 @@ public class Home extends javax.swing.JFrame {
         Resolucoes.addItem("A9 37 × 52  = 437 x 614 pixels");
         Resolucoes.addItem("A10 26 × 37 = 307 x 437 pixels");
         Resolucoes.setSelectedIndex(3);
-        MenuEdicaoPlaca.add(Resolucoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 240, 30));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Escolha uma resolução ou personalize uma !!!");
-        MenuEdicaoPlaca.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 490, 40));
+        MenuEdicaoPlaca.add(Resolucoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 220, 30));
 
         FonteExternaDescricaoProduto.setText("Fonte Externa");
         FonteExternaDescricaoProduto.setPreferredSize(new java.awt.Dimension(45, 20));
@@ -525,6 +531,102 @@ public class Home extends javax.swing.JFrame {
             }
         });
         MenuEdicaoPlaca.add(FonteExternaCifraoPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 140, -1));
+
+        TextoExtra.setText("200g");
+        TextoExtra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TextoExtraKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TextoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 220, -1));
+
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel14.setText("Texto Extra:");
+        MenuEdicaoPlaca.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 220, 30));
+
+        FonteTextoExtra.setPreferredSize(new java.awt.Dimension(19, 20));
+        FonteTextoExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteTextoExtraActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteTextoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 120, -1));
+
+        TamanhoTextoExtra.setText("36");
+        TamanhoTextoExtra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoTextoExtraKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoTextoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 390, 60, -1));
+
+        CorTextoExtra.setBackground(new java.awt.Color(0, 0, 0));
+        CorTextoExtra.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorTextoExtra.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorTextoExtra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorTextoExtraMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorTextoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 20, -1));
+
+        FonteExternaTextoExtra.setText("Fonte Externa");
+        FonteExternaTextoExtra.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaTextoExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaTextoExtraActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaTextoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 390, 140, -1));
+
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel15.setText("Tiulo:");
+        MenuEdicaoPlaca.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 220, 30));
+
+        Titulo.setText("OFERTA");
+        Titulo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TituloKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 220, -1));
+
+        FonteTitulo.setPreferredSize(new java.awt.Dimension(19, 20));
+        FonteTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteTituloActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 120, -1));
+
+        TamanhoTitulo.setText("120");
+        TamanhoTitulo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamanhoTituloKeyReleased(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(TamanhoTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 60, -1));
+
+        CorTitulo.setBackground(new java.awt.Color(255, 255, 0));
+        CorTitulo.setMinimumSize(new java.awt.Dimension(28, 20));
+        CorTitulo.setPreferredSize(new java.awt.Dimension(28, 20));
+        CorTitulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CorTituloMouseClicked(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(CorTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, 20, -1));
+
+        FonteExternaTitulo.setText("Fonte Externa");
+        FonteExternaTitulo.setPreferredSize(new java.awt.Dimension(45, 20));
+        FonteExternaTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FonteExternaTituloActionPerformed(evt);
+            }
+        });
+        MenuEdicaoPlaca.add(FonteExternaTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 440, 140, -1));
 
         kGradientPanel1.add(MenuEdicaoPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 680, 510));
 
@@ -590,6 +692,12 @@ public class Home extends javax.swing.JFrame {
         Reais.setText("3");
         Reais.setToolTipText("");
         PlacaKg.add(Reais, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 150, 230));
+
+        Extra.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        Extra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Extra.setText("200g");
+        Extra.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        PlacaKg.add(Extra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 140, 70));
 
         kGradientPanel1.add(PlacaKg, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 380, 510));
 
@@ -893,13 +1001,13 @@ public class Home extends javax.swing.JFrame {
                     Virgula.setForeground(selectedColor);
                 }
     }//GEN-LAST:event_CorVirgulaPrecoMouseClicked
-
+	
     private void CorCifraoPrecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorCifraoPrecoMouseClicked
         Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorCifraoPreco.getBackground());
         if (selectedColor != null) {
-                    CorCifraoPreco.setBackground(selectedColor);
-                    Cifrao.setForeground(selectedColor);
-                }
+            CorCifraoPreco.setBackground(selectedColor);
+            Cifrao.setForeground(selectedColor);
+        }
     }//GEN-LAST:event_CorCifraoPrecoMouseClicked
 
     // configura o campo de resoluçao personalizado
@@ -1063,7 +1171,120 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_FonteExternaCifraoPrecoActionPerformed
 
-   
+    // Texto Extra
+    private void TextoExtraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextoExtraKeyReleased
+        String TextoExtraText = TextoExtra.getText();
+        Extra.setText( TextoExtraText);
+    }//GEN-LAST:event_TextoExtraKeyReleased
+
+    private void FonteTextoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteTextoExtraActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteTextoExtra.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,36);
+
+            
+            Extra.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteTextoExtraActionPerformed
+
+    private void TamanhoTextoExtraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoTextoExtraKeyReleased
+        String text = TamanhoTextoExtra.getText();
+        int size = Integer.parseInt(text);
+        if (minhaFonte8 != null){
+            Font newFonte = minhaFonte8.deriveFont((float)size);
+            Extra.setFont(newFonte);
+        }
+    }//GEN-LAST:event_TamanhoTextoExtraKeyReleased
+
+    private void CorTextoExtraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorTextoExtraMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorTextoExtra.getBackground());
+        if (selectedColor != null) {
+                    CorTextoExtra.setBackground(selectedColor);
+                    Extra.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorTextoExtraMouseClicked
+
+    private Font minhaFonte8;
+    private void FonteExternaTextoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaTextoExtraActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte8 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte8 = minhaFonte8.deriveFont(48f);            
+        Extra.setFont(minhaFonte8);
+        }
+    }//GEN-LAST:event_FonteExternaTextoExtraActionPerformed
+
+    // Titulo
+    private void TituloKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TituloKeyReleased
+        String TextoExtraText = Titulo.getText();
+        Oferta.setText( TextoExtraText);
+    }//GEN-LAST:event_TituloKeyReleased
+
+    private void FonteTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteTituloActionPerformed
+        try {
+            
+            String nomeFonte = (String) FonteTitulo.getSelectedItem();
+            Font font = new Font(nomeFonte, Font.PLAIN,120);
+
+            
+            Oferta.setFont(font);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar fonte: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_FonteTituloActionPerformed
+
+    private void TamanhoTituloKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamanhoTituloKeyReleased
+        String text = TamanhoTitulo.getText();
+        int size = Integer.parseInt(text);
+        if (minhaFonte9 != null){
+            Font newFonte = minhaFonte9.deriveFont((float)size);
+            Oferta.setFont(newFonte);
+        }
+    }//GEN-LAST:event_TamanhoTituloKeyReleased
+
+    private void CorTituloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorTituloMouseClicked
+        Color selectedColor = JColorChooser.showDialog(Home.this, "Escolha uma cor", CorTitulo.getBackground());
+        if (selectedColor != null) {
+                    CorTitulo.setBackground(selectedColor);
+                    Oferta.setForeground(selectedColor);
+                }
+    }//GEN-LAST:event_CorTituloMouseClicked
+
+    private Font minhaFonte9;
+    private void FonteExternaTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaTituloActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setFileFilter(filter);
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = chooser.getSelectedFile();
+        try {
+            minhaFonte9 = Font.createFont(Font.TRUETYPE_FONT, selectedFile);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        minhaFonte9 = minhaFonte9.deriveFont(48f);            
+        Oferta.setFont(minhaFonte9);
+        }
+    }//GEN-LAST:event_FonteExternaTituloActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1081,6 +1302,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel CorCifraoPreco;
     private javax.swing.JPanel CorDescricaoProduto;
     private javax.swing.JPanel CorNomeProduto;
+    private javax.swing.JPanel CorTextoExtra;
+    private javax.swing.JPanel CorTitulo;
     private javax.swing.JPanel CorUnidadeMedida;
     private javax.swing.JPanel CorValorCentavos;
     private javax.swing.JPanel CorValorReais;
@@ -1088,17 +1311,22 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel DescricaoDoProduto;
     private javax.swing.JTextField DescricaoProduto;
     private javax.swing.JSeparator DivisorCentavos;
+    private javax.swing.JLabel Extra;
     private javax.swing.JLabel Fechar;
     private javax.swing.JComboBox<String> FonteCifraoPreco;
     private javax.swing.JComboBox<String> FonteDescricaoProduto;
     private javax.swing.JToggleButton FonteExternaCifraoPreco;
     private javax.swing.JToggleButton FonteExternaDescricaoProduto;
     private javax.swing.JToggleButton FonteExternaProduto;
+    private javax.swing.JToggleButton FonteExternaTextoExtra;
+    private javax.swing.JToggleButton FonteExternaTitulo;
     private javax.swing.JToggleButton FonteExternaUnidadeMedida;
     private javax.swing.JToggleButton FonteExternaValorCentavos;
     private javax.swing.JToggleButton FonteExternaValorReais;
     private javax.swing.JToggleButton FonteExternaVirgulaPreco;
     private javax.swing.JComboBox<String> FonteNomeProduto;
+    private javax.swing.JComboBox<String> FonteTextoExtra;
+    private javax.swing.JComboBox<String> FonteTitulo;
     private javax.swing.JComboBox<String> FonteUnidadeMedida;
     private javax.swing.JComboBox<String> FonteValorCentavos;
     private javax.swing.JComboBox<String> FonteValorReais;
@@ -1115,10 +1343,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField TamanhoCifraoPreco;
     private javax.swing.JTextField TamanhoDescricaoProduto;
     private javax.swing.JTextField TamanhoNomeProduto;
+    private javax.swing.JTextField TamanhoTextoExtra;
+    private javax.swing.JTextField TamanhoTitulo;
     private javax.swing.JTextField TamanhoUnidadeMedida;
     private javax.swing.JTextField TamanhoValorCentavos;
     private javax.swing.JTextField TamanhoValorReais;
     private javax.swing.JTextField TamanhoVirgulaPreco;
+    private javax.swing.JTextField TextoExtra;
+    private javax.swing.JTextField Titulo;
     private javax.swing.JTextField UnidadeMedida;
     private javax.swing.JTextField ValorCentavos;
     private javax.swing.JTextField ValorReais;
@@ -1128,7 +1360,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
