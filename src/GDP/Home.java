@@ -1100,8 +1100,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaProdutoActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -1122,8 +1122,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaDescricaoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaDescricaoProdutoActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -1144,8 +1144,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaValorReaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaValorReaisActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -1166,8 +1166,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaValorCentavosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaValorCentavosActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -1188,8 +1188,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaUnidadeMedidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaUnidadeMedidaActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -1210,8 +1210,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaVirgulaPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaVirgulaPrecoActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -1232,8 +1232,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaCifraoPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaCifraoPrecoActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -1299,8 +1299,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaTextoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaTextoExtraActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -1366,8 +1366,8 @@ public class Home extends javax.swing.JFrame {
     private void FonteExternaTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FonteExternaTituloActionPerformed
         tipoFonte = 2;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf");
+        chooser.setCurrentDirectory(new File ("C:\\"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TTF", "ttf", "otf");
         chooser.setFileFilter(filter);
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
