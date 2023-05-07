@@ -650,12 +650,12 @@ public class Home extends javax.swing.JFrame {
         Produto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Produto.setText("CEBOLA");
         Produto.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        PlacaKg.add(Produto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 360, 110));
+        PlacaKg.add(Produto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 360, 120));
 
         DescricaoDoProduto.setFont(new java.awt.Font("Impact", 0, 70)); // NOI18N
         DescricaoDoProduto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DescricaoDoProduto.setText("BRANCA");
-        PlacaKg.add(DescricaoDoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 224, 350, 60));
+        PlacaKg.add(DescricaoDoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 214, 350, 90));
 
         Cifrao.setFont(new java.awt.Font("Impact", 0, 48)); // NOI18N
         Cifrao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -696,7 +696,7 @@ public class Home extends javax.swing.JFrame {
         Extra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Extra.setText("200g");
         Extra.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        PlacaKg.add(Extra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 140, 70));
+        PlacaKg.add(Extra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 180, 80));
 
         DivisorOferta.setBackground(new java.awt.Color(0, 0, 0));
         DivisorOferta.setForeground(new java.awt.Color(0, 0, 0));
