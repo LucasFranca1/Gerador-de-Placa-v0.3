@@ -761,7 +761,7 @@
             </Container>
             <Component class="javax.swing.JTextField" name="widthUser">
               <Properties>
-                <Property name="text" type="java.lang.String" value="3508 "/>
+                <Property name="text" type="java.lang.String" value="3508"/>
               </Properties>
               <Events>
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="widthUserKeyReleased"/>
@@ -805,6 +805,9 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResolucoesActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox&lt;&gt;()"/>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="Resolucoes.addItem(&quot;A3 3508 x 4961 pixels&quot;);&#xa;Resolucoes.addItem(&quot;A4 2480 x 3508 pixels&quot;);&#xa;Resolucoes.setSelectedIndex(0);"/>

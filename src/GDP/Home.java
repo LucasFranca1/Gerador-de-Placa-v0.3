@@ -28,6 +28,7 @@ public class Home extends javax.swing.JFrame {
     GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
     String[] nomeFontes = ge.getAvailableFontFamilyNames();
     int tipoFonte;
+    
      
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -445,7 +446,7 @@ public class Home extends javax.swing.JFrame {
         });
         MenuEdicaoPlaca.add(CorVirgulaPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 20, -1));
 
-        widthUser.setText("3508 ");
+        widthUser.setText("3508");
         widthUser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 widthUserKeyReleased(evt);
@@ -469,6 +470,11 @@ public class Home extends javax.swing.JFrame {
         Resolucoes.addItem("A3 3508 x 4961 pixels");
         Resolucoes.addItem("A4 2480 x 3508 pixels");
         Resolucoes.setSelectedIndex(0);
+        Resolucoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResolucoesActionPerformed(evt);
+            }
+        });
         MenuEdicaoPlaca.add(Resolucoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 220, 30));
 
         FonteExternaDescricaoProduto.setText("Fonte Externa");
@@ -1377,6 +1383,29 @@ public class Home extends javax.swing.JFrame {
         Oferta.setFont(minhaFonte9);
         }
     }//GEN-LAST:event_FonteExternaTituloActionPerformed
+
+    // Seleção de resolução
+    private void ResolucoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResolucoesActionPerformed
+      String txtResolu = (String) Resolucoes.getSelectedItem();
+      switch(txtResolu){
+      case "A3 3508 x 4961 pixels":
+      widthUser.setText("3508");
+      heightUser.setText("4961");
+      int newWidth = 3508;
+      PainelParaPNG.setWidth(newWidth);
+      int newHeight = 4961;
+      PainelParaPNG.setHeight(newHeight);
+      break;
+      case "A4 2480 x 3508 pixels":
+      widthUser.setText("2480");
+      heightUser.setText("3508");
+      int newWidth1 = 2480;
+      PainelParaPNG.setWidth(newWidth1);
+      int newHeight1 = 3508;
+      PainelParaPNG.setHeight(newHeight1);
+      break;    
+      }
+    }//GEN-LAST:event_ResolucoesActionPerformed
 
     public static void main(String args[]) {
 
